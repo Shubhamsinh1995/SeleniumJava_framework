@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.ScreenShot_Utility;
 
 public class LoginPageTest extends TestBase{
 
@@ -37,7 +38,7 @@ public class LoginPageTest extends TestBase{
 	public void loginTest() throws Exception
 	{
 		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password") );
-
+		ScreenShot_Utility.captureScreenshot(driver, "Login");
 	}
 	
 	@AfterMethod

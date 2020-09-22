@@ -9,6 +9,7 @@ import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.ScreenShot_Utility;
 
 public class HomePageTest extends TestBase {
 
@@ -40,12 +41,14 @@ public class HomePageTest extends TestBase {
 	{
 		String title=homePage.verifyHomePageTitle();
 		Assert.assertEquals(title, "Cogmento CRM","Home page title not matched");
+		ScreenShot_Utility.captureScreenshot(driver, "LoginPage");
 	}
 	
 	@Test(priority = 2)
 	public void verifyusernameTest()
 	{
 		Assert.assertTrue(homePage.verifyusernameLable()); 
+		ScreenShot_Utility.captureScreenshot(driver, "username");
 	}
 	
 	@Test(priority = 3)

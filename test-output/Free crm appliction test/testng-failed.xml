@@ -6,8 +6,10 @@
       <class name="com.crm.qa.testcases.ContactsPageTest">
         <methods>
           <include name="setUp"/>
-          <include name="createNewContactTest"/>
+          <include name="clickNewContactTest"/>
+          <include name="selectMultipleContactsTest"/>
           <include name="tearDown"/>
+          <include name="selectSingleContactsTest"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
     </classes>
