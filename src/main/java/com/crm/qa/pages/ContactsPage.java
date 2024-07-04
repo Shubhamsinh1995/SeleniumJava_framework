@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.crm.qa.base.TestBase;
@@ -43,6 +45,7 @@ public class ContactsPage extends TestBase {
 	// Actions
 	public boolean verifycontactsLable()
 	{
+		//getWebDriverWait(20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Contacts']")));
 		return contactsLable.isDisplayed();
 	}
 	

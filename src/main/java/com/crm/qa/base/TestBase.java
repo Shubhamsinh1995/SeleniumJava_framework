@@ -3,12 +3,17 @@ package com.crm.qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.crm.qa.util.TestUtil;
 
@@ -36,8 +41,10 @@ public class TestBase {
 		
 		if(browsername.equals("Chrome")) 
 		{
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\chromedriver_win32\\chromedriver.exe");
-		    driver= new ChromeDriver();
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Drivers\\chromedriver-win32\\chromedriver.exe");
+			ChromeOptions co = new ChromeOptions();
+			co.setBinary("C:\\Users\\Admin\\Drivers\\chrome-win32\\chrome.exe");
+		    driver= new ChromeDriver(co);
 			
 			
 		}
@@ -55,5 +62,14 @@ public class TestBase {
 		
 		driver.get(prop.getProperty("url"));
 	}
+	
+	/*
+	 * public WebDriverWait getWebDriverWait(long timeOutInSeconds) { return
+	 * ((WebDriverWait)new WebDriverWait(driver,
+	 * timeOutInSeconds).ignoring(NoSuchElementException.class,
+	 * StaleElementReferenceException.class));     }
+	 */
+	
+	
 
 }
