@@ -22,6 +22,7 @@ public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
 	
+// here in test base class we loaded properties file	
 	public TestBase() 
 	{
 		try {
@@ -36,18 +37,21 @@ public class TestBase {
 		}
 	}
 	
+	
+// In this method we initialized Chrome driver	
 	public static void initialization() {
 		String browsername=prop.getProperty("browser");
 		
 		if(browsername.equals("Chrome")) 
 		{
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Drivers\\chromedriver-win32\\chromedriver.exe");
-			ChromeOptions co = new ChromeOptions();
-			co.setBinary("C:\\Users\\Admin\\Drivers\\chrome-win32\\chrome.exe");
-		    driver= new ChromeDriver(co);
-			
-			
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Drivers\\chromedriver.exe");
+			/*
+			 * ChromeOptions co = new ChromeOptions();
+			 * co.setBinary("C:\\Users\\Admin\\Drivers\\chromedriver.exe");
+			 */
+		    driver= new ChromeDriver();
 		}
+		
 		else if(browsername.equals("FF")) 
 		{
 			System.setProperty("webdriver.gecko.driver", "C:\\Users\\Admin\\chromedriver_win32\\geckoDriver.exe");
