@@ -36,13 +36,18 @@ public class LoginPage extends TestBase{
 		return driver.getTitle();
 	}
 	
-	public HomePage login(String un, String pwd) 
+	public void loginWithUserNameAndPassword(String un, String pwd) 
 	{
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginBtn.click();
 		
+	}
+	
+	public HomePage doLogin() {
+		loginWithUserNameAndPassword(prop.getProperty("username"),prop.getProperty("password"));
 		return new HomePage();
+		
 	}
 	
 	

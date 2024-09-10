@@ -17,19 +17,13 @@ public class LoginPageTest extends TestBase{
 	
 	public LoginPageTest() { 
 		super();
-		
 	}
 	
-	@BeforeMethod
-	public void setUp() 
-	{
-		initialization();
-		loginPage=new LoginPage();
-	}
 	
 	@Test(priority = 1)
 	public void loginPageTitle()
 	{
+		loginPage = new LoginPage();
 		String title=loginPage.validateLoginPageTitle();
 		Assert.assertEquals(title, "Cogmento CRM");
 	}
@@ -37,13 +31,10 @@ public class LoginPageTest extends TestBase{
 	@Test(priority = 2)
 	public void loginTest() throws Exception
 	{
-		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password") );
-		ScreenShot_Utility.captureScreenshot(driver, "Login");
+		loginPage = new LoginPage();
+		homePage = loginPage.doLogin();
 	}
 	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
+	
 
 }

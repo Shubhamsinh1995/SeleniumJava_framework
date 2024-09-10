@@ -31,31 +31,37 @@ public class ContactsPageTest extends TestBase {
 		// @Test-- execute test case
 		// after each test case-- close the browser
 		
-		@BeforeMethod
-		public void setUp() 
-		{
-			initialization();
-			loginPage=new LoginPage();
-			contactsPage=new ContactsPage();
-			homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
-			contactsPage=homePage.clickOnConctsLink();
-		}
+	/*
+	 * @BeforeMethod public void setUp() { initialization(); loginPage=new
+	 * LoginPage(); contactsPage=new ContactsPage();
+	 * homePage=loginPage.login(prop.getProperty("username"),prop.getProperty(
+	 * "password")); contactsPage=homePage.clickOnConctsLink(); }
+	 */
 		
 		@Test(priority = 1)
 		public void verifyContactsPageLableTest()
 		{
+			loginPage=new LoginPage();
+			homePage=loginPage.doLogin();
+			contactsPage=homePage.clickOnConctsLink();
 			Assert.assertTrue(contactsPage.verifycontactsLable()," contacts labe is missing on the page");
 		}
 		
 		@Test(priority=2)
 		public void selectSingleContactsTest()
 		{
+			loginPage=new LoginPage();
+			homePage=loginPage.doLogin();
+			contactsPage=homePage.clickOnConctsLink();
 			contactsPage.selectContactByName("Akshay bhagat");
 		}
 		
 		@Test(priority=3)
 		public void selectMultipleContactsTest()
 		{
+			loginPage=new LoginPage();
+			homePage=loginPage.doLogin();
+			contactsPage=homePage.clickOnConctsLink();
 			contactsPage.selectContactByName("Akshay bhagat");
 			contactsPage.selectContactByName("pooja  patil");
 		}
@@ -70,16 +76,13 @@ public class ContactsPageTest extends TestBase {
 		@Test(priority=4,groups = "contacts", dataProvider ="getCRMTestData" )
 		public void clickNewContactTest(String fname, String lname, String comp)
 		{
+			loginPage=new LoginPage();
+			homePage=loginPage.doLogin();
+			contactsPage=homePage.clickOnConctsLink();
 			contactsPage.clickOnNewContactLink();
 			//contactsPage.createNewContact("arti", "mahalle", "xyz");
 			contactsPage.createNewContact(fname, lname, comp);
 		}
-		
-		
-		
-		
-		@AfterMethod
-		public void tearDown() {
-			driver.quit();
-		}
 }
+		
+		

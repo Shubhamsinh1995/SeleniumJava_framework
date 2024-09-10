@@ -27,29 +27,25 @@ public class HomePageTest extends TestBase {
 	// @Test-- execute test case
 	// after each test case-- close the browser
 	
-	@BeforeMethod
-	public void setUp() 
-	{
-		initialization();
-		loginPage=new LoginPage();
-		contactsPage=new ContactsPage();
-		homePage=loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
-	}
 	
 	@Test(priority = 1)
 	public void verifyHomePageTitleTest()
 	{
+		loginPage=new LoginPage();
+		contactsPage=new ContactsPage();
+		homePage = loginPage.doLogin();
+		
 		String title=homePage.verifyHomePageTitle();
 		Assert.assertEquals(title, "Cogmento CRM","Home page title not matched");
-		ScreenShot_Utility.captureScreenshot(driver, "LoginPage");
 	}
+	
 	
 	@Test(priority = 2)
 	public void verifyusernameTest()
 	{
 		Assert.assertTrue(homePage.verifyusernameLable()); 
-		ScreenShot_Utility.captureScreenshot(driver, "username");
 	}
+	
 	
 	@Test(priority = 3)
 	public void clickOnConctsLinkTest()
@@ -57,12 +53,5 @@ public class HomePageTest extends TestBase {
 		contactsPage=homePage.clickOnConctsLink();
 	}
 
-	
-	
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
-	
 	
 }

@@ -12,16 +12,17 @@ import com.google.common.io.Files;
 
 public class ScreenShot_Utility{
 	
-	public static void captureScreenshot(WebDriver driver, String screenShotname) {
+	public static String captureScreenshot(WebDriver driver, String testcaseName) {
 		
 		try {
 			TakesScreenshot ts=(TakesScreenshot) driver;
 			File src=ts.getScreenshotAs(OutputType.FILE);
-			Files.copy(src, new File("./ScreenShots/"+screenShotname+".png"));
+			Files.copy(src, new File("./ScreenShots/"+testcaseName+".png"));
 		} catch (Exception e) {
 		
 			System.out.println("Exception while getting screenshot "+e.getMessage() );
 		} 
+		return System.getProperty("user.dir")+"\\ScreenShots\\"+testcaseName+".png";
 		
 	}
 }

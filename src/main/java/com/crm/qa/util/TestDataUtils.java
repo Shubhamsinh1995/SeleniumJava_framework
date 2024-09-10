@@ -11,7 +11,7 @@ public class TestDataUtils {
 		ArrayList<Object[]> myData=new ArrayList<Object[]>();
 		
 		try {
-			reader=new Xls_Reader("C:\\my java\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\testData\\CRMTestData.xlsx");
+			reader=new Xls_Reader(System.getProperty("user.dir")+"src\\main\\java\\com\\crm\\qa\\testData\\CRMTestData.xlsx");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
