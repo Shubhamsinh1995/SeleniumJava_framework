@@ -12,7 +12,6 @@
           <include name="clickNewContactTest"/>
           <include name="selectMultipleContactsTest"/>
           <include name="initialization"/>
-          <include name="verifyContactsPageLableTest"/>
           <include name="selectSingleContactsTest"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->
@@ -22,6 +21,7 @@
           <include name="clickOnConctsLinkTest"/>
           <include name="initialization"/>
           <include name="verifyusernameTest"/>
+          <include name="verifyHomePageTitleTest"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.HomePageTest -->
     </classes>

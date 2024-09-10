@@ -2,6 +2,7 @@ package com.crm.qa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -12,7 +13,7 @@ import com.crm.qa.base.TestBase;
 
 public class ContactsPage extends TestBase {
 
-	@FindBy(xpath="//div[text()='Contacts']")
+	@FindBy(xpath="//span[@class='selectable ' and text()='Contacts']")
 	WebElement contactsLable;
 	
 	@FindBy(xpath="//button[text()='New']")
@@ -46,14 +47,17 @@ public class ContactsPage extends TestBase {
 	public boolean verifycontactsLable()
 	{
 		//getWebDriverWait(20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Contacts']")));
+		Actions actions = new Actions(driver);	
+		actions.moveToElement(contactsLable).build().perform();
 		return contactsLable.isDisplayed();
 	}
 	
 	public void selectContactByName(String name)
 	{
-		driver.findElement(By.xpath("//td[text()='"+name+"']//preceding-sibling::td[@class='']"
-				+ "//div[@class='ui fitted read-only checkbox']")).click();
+		
+		driver.findElement(By.xpath("//a[text()='"+name+"']/parent::td/preceding-sibling::td/div[@class='ui fitted read-only checkbox']")).click();
 	}
+	
 	
 	public void clickOnNewContactLink()
 	{

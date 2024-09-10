@@ -1,6 +1,8 @@
 package com.crm.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -10,6 +12,9 @@ public class HomePage extends TestBase {
 
 	@FindBy(xpath="//span[contains(text(),'shubham baiyas')]")
     WebElement usernameLable;
+	
+	@FindBy(xpath = "//i[@class='users icon']")
+	WebElement usernIcon;
 	
 	@FindBy(xpath="//span[contains(text(),'Contacts')]")
     WebElement contactsLink;
@@ -36,11 +41,15 @@ public class HomePage extends TestBase {
 		return  usernameLable.isDisplayed();
 	}
 	
+	
 	public ContactsPage clickOnConctsLink()
 	{
+		Actions actions = new Actions(driver);	
+		actions.moveToElement(usernIcon).perform();
 		contactsLink.click();
 		return new ContactsPage();
 	}
+	
 	
 	public DealsPage clickOnDealsLink()
 	{
