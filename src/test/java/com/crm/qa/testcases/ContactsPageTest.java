@@ -73,15 +73,14 @@ public class ContactsPageTest extends TestBase {
 			return data.iterator();
 		}
 		
-		@Test(priority=4,groups = "contacts", dataProvider ="getCRMTestData" )
-		public void clickNewContactTest(String fname, String lname, String comp)
+		@Test(priority=4, dataProvider ="getCRMTestData" )
+		public void clickNewContactTest(String fname, String lname, String comp, String status)
 		{
 			loginPage=new LoginPage();
 			homePage=loginPage.doLogin();
 			contactsPage=homePage.clickOnConctsLink();
 			contactsPage.clickOnNewContactLink();
-			//contactsPage.createNewContact("arti", "mahalle", "xyz");
-			contactsPage.createNewContact(fname, lname, comp);
+			contactsPage.createNewContact(fname, lname, comp, status);
 		}
 }
 		

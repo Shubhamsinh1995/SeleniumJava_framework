@@ -35,8 +35,8 @@ package com.crm.qa.util;
 				e.printStackTrace();
 			}
 		}
-		// returns the row count in a sheet
 
+		// returns the row count in a sheet
 		public int getRowCount(String sheetName) {
 			int index = workbook.getSheetIndex(sheetName);
 			if (index == -1)
@@ -49,15 +49,6 @@ package com.crm.qa.util;
 
 		}
 
-		/**
-		 * Code has been updated as per new POI version - 4.x.x
-		 * 
-		 * @author NaveenKhunteta
-		 * @param sheetName
-		 * @param colNum
-		 * @param rowNum
-		 * @return
-		 */
 		// returns the data from a cell
 		public String getCellData(String sheetName, String colName, int rowNum) {
 			try {
@@ -126,9 +117,7 @@ package com.crm.qa.util;
 			}
 		}
 
-		/**
-		 * Code has been updated as per new POI version - 4.x.x
-		 */
+
 		// returns the data from a cell
 		public String getCellData(String sheetName, int colNum, int rowNum) {
 			try {

@@ -6,6 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 import com.microsoft.schemas.compatibility.AlternateContentDocument.AlternateContent.Choice.Factory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends TestBase{
 
@@ -38,6 +39,8 @@ public class LoginPage extends TestBase{
 	
 	public void loginWithUserNameAndPassword(String un, String pwd) 
 	{
+		getWebDriverWait(3000).until(ExpectedConditions.visibilityOf(username));
+		getWebDriverWait(3000).until(ExpectedConditions.visibilityOf(password));
 		username.sendKeys(un);
 		password.sendKeys(pwd);
 		loginBtn.click();

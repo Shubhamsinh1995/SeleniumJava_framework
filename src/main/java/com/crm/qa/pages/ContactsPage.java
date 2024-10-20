@@ -31,11 +31,11 @@ public class ContactsPage extends TestBase {
 	@FindBy(xpath="//i[@class='save icon']")
 	WebElement saveBtn;
 	
-//	@FindBy(name="status")
-//	WebElement status;
+	@FindBy(name="status")
+	WebElement status;
 	
-//	@FindBy(xpath="//td[text()='Akshay bhagat']//preceding-sibling::td[@class='']//div[@class='ui fitted read-only checkbox']")
-//	WebElement checkBox;
+	@FindBy(xpath="//td[text()='Akshay bhagat']//preceding-sibling::td[@class='']//div[@class='ui fitted read-only checkbox']")
+	WebElement checkBox;
 	
 	
 	//initializing the Page Objects
@@ -46,7 +46,7 @@ public class ContactsPage extends TestBase {
 	// Actions
 	public boolean verifycontactsLable()
 	{
-		//getWebDriverWait(20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Contacts']")));
+		getWebDriverWait(20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Contacts']")));
 		Actions actions = new Actions(driver);	
 		actions.moveToElement(contactsLable).build().perform();
 		return contactsLable.isDisplayed();
@@ -64,15 +64,15 @@ public class ContactsPage extends TestBase {
 		newContactsLink.click();
 	}
 	
-	public void createNewContact(String fname, String lname, String comp)
+	public void createNewContact(String fname, String lname, String comp, String statusName)
 	{
 		firstName.sendKeys(fname);
 		lastName.sendKeys(lname);
 		company.sendKeys(comp);
 		
-//		Select select=new Select(driver.findElement(By.name("status")));
-//		select.selectByVisibleText(status);
-		
+		Select select=new Select(status);
+		select.selectByVisibleText(statusName);
+
 		saveBtn.click();
 	}
 

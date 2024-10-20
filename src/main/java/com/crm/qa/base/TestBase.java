@@ -77,29 +77,6 @@ public class TestBase {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void deleteBrowserCache(){
         try {
             Runtime.getRuntime().exec("RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 255");
@@ -112,16 +89,10 @@ public class TestBase {
             e.printStackTrace();
         }
     }
+
 	
-	
-	
-	/*
-	 * public WebDriverWait getWebDriverWait(long timeOutInSeconds) { return
-	 * ((WebDriverWait)new WebDriverWait(driver,
-	 * timeOutInSeconds).ignoring(NoSuchElementException.class,
-	 * StaleElementReferenceException.class));     }
-	 */
-	
-	
+	  public WebDriverWait getWebDriverWait(long timeOutInSeconds) {
+		return ((WebDriverWait)new WebDriverWait(driver, timeOutInSeconds).ignoring(NoSuchElementException.class, StaleElementReferenceException.class));
+	}
 
 }
