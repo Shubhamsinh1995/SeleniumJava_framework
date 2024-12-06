@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -48,24 +49,29 @@ public class TestBase {
 		
 		if(browsername.equals("Chrome")) 
 		{
-			WebDriverManager.chromedriver().setup();
+			//WebDriverManager.chromedriver().setup(); // using selenium version 4.xx.x
 			//System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\Drivers\\chromedriver.exe");
 		    driver= new ChromeDriver();
 		}
 		
-		else if(browsername.equals("FF")) 
+		if(browsername.equals("Firefox"))
 		{
-			WebDriverManager.edgedriver().setup();
+			//WebDriverManager.firefoxdriver();
 		    driver= new FirefoxDriver();
 			
+		}
+		if(browsername.equals("edge"))
+		{
+			//WebDriverManager.edgedriver().setup();
+			driver= new FirefoxDriver();
+
 		}
 		
 		driver.manage().window().maximize();
 		//driver.manage().deleteAllCookies();
 		deleteBrowserCache();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIME_OUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIME_OUT));
+
 		driver.get(prop.getProperty("url"));
 	}
 	
@@ -92,7 +98,7 @@ public class TestBase {
 
 	
 	  public WebDriverWait getWebDriverWait(long timeOutInSeconds) {
-		return ((WebDriverWait)new WebDriverWait(driver, timeOutInSeconds).ignoring(NoSuchElementException.class, StaleElementReferenceException.class));
+		return ((WebDriverWait)new WebDriverWait(driver, Duration.ofSeconds(timeOutInSeconds)).ignoring(NoSuchElementException.class, StaleElementReferenceException.class));
 	}
 
 }

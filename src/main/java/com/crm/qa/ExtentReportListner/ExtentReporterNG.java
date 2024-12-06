@@ -6,19 +6,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-import org.openqa.selenium.WebDriver;
-import org.testng.IReporter;
-import org.testng.IResultMap;
-import org.testng.ISuite;
-import org.testng.ISuiteResult;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.xml.XmlSuite;
 
-import com.crm.qa.util.ScreenShot_Utility;
+import org.testng.*;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import org.testng.xml.XmlSuite;
 
 public class ExtentReporterNG implements IReporter {
 	private ExtentReports extent;
@@ -58,13 +51,6 @@ public class ExtentReporterNG implements IReporter {
 
 				if (result.getThrowable() != null) {
 					test.log(status, result.getThrowable());
-					/*
-					 * try {
-					 * driver=(WebDriver)result.getTestClass().getRealClass().getField("driver").get
-					 * (result.getInstance()); } catch (Exception e) { e.printStackTrace(); } String
-					 * path = ScreenShot_Utility.captureScreenshot(driver,
-					 * result.getMethod().getMethodName()); test.addScreenCapture(path);
-					 */
 				} else {
 					test.log(status, "Test " + status.toString().toLowerCase() + "ed");
 				}
