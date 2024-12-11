@@ -1,27 +1,21 @@
 package com.crm.qa.testcases;
 
+import com.crm.qa.base.BaseTest;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
-import com.crm.qa.util.ScreenShot_Utility;
 
-public class HomePageTest extends TestBase {
+
+public class HomePageTest extends BaseTest {
 
 	HomePage homePage;
 	LoginPage loginPage;
 	ContactsPage contactsPage;
-	
-	public HomePageTest() {
-		super();
-	}
-	
-	
+
 	// testcase should be seperated -- independent to each other
 	// before each testcase -- launch the browser and login
 	// @Test-- execute test case

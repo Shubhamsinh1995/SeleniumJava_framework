@@ -9,7 +9,7 @@ System info: host: &amp;apos;DESKTOP-U7LEM7P&amp;apos;, ip: &amp;apos;192.168.43
 Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 85.0.4183.102, chrome: {chromedriverVersion: 85.0.4183.87 (cd6713ebf92fa..., userDataDir: C:\Users\Admin\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:56733}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
 Session ID: a94d41b318ca11ebd03b99461f965737">
-      <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 27.681
+        <![CDATA[org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 27.681
   (Session info: chrome=85.0.4183.102)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'DESKTOP-U7LEM7P', ip: '192.168.43.46', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.6'
@@ -23,7 +23,7 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)
-at com.crm.qa.base.TestBase.initialization(TestBase.java:56)
+at setup(TestBase.java:56)
 at com.crm.qa.testcases.ContactsPageTest.setUp(ContactsPageTest.java:37)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
 ... Removed 35 stack frames]]>

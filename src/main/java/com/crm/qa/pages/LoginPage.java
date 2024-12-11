@@ -4,11 +4,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.crm.qa.base.TestBase;
-import com.microsoft.schemas.compatibility.AlternateContentDocument.AlternateContent.Choice.Factory;
+import com.crm.qa.base.Base;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class LoginPage extends TestBase{
+public class LoginPage extends Base {
 
 	
 	// Page Factory -- OR

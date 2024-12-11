@@ -1,8 +1,8 @@
 package com.crm.qa.util;
 
-import com.crm.qa.base.TestBase;
+import com.crm.qa.base.Base;
 
-public class TestUtil extends TestBase {
+public class TestUtil extends Base {
 	public TestUtil() throws Exception {
 		super();
 		

@@ -6,9 +6,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.crm.qa.base.TestBase;
+import com.crm.qa.base.Base;
 
-public class HomePage extends TestBase {
+public class HomePage extends Base {
 
 	@FindBy(xpath="//span[contains(text(),'shubham baiyas')]")
     WebElement usernameLable;

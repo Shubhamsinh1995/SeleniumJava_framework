@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import com.crm.qa.base.TestBase;
+import com.crm.qa.base.Base;
 
-public class ContactsPage extends TestBase {
+public class ContactsPage extends Base {
 
 	@FindBy(xpath="//span[@class='selectable ' and text()='Contacts']")
 	WebElement contactsLable;

@@ -5,7 +5,7 @@
 
 	<listeners>
 		<listener
-			class-name="com.crm.qa.ExtentReportListner.ExtentReporterNG" />
+			class-name="com.crm.qa.ExtentReport.ExtentReportListener" />
 	</listeners>
 
 	<test name="LoginPageTest">
