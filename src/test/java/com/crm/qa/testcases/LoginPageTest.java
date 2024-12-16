@@ -11,8 +11,6 @@ public class LoginPageTest extends BaseTest {
 
 	LoginPage loginPage;
 	HomePage homePage;
-
-	// https://www.opencart.com/
 	
 	@Test(priority = 1)
 	public void loginPageTitle()

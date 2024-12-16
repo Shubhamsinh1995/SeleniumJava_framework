@@ -15,7 +15,7 @@ public class BaseTest {
 	}
 
 	@BeforeMethod(alwaysRun=true)
-	public static void setup() {
+	public void setup() {
 		base = new Base();
         prop = base.initProperties();
         driver = base.initBrowser();
