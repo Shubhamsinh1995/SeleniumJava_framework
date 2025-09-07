@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.crm.qa.base.Base;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class ContactsPage extends Base {
 
@@ -45,6 +48,9 @@ public class ContactsPage extends Base {
 	// Actions
 	public boolean verifycontactsLable()
 	{
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3000));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("")));
+
 		getWebDriverWait(20).until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Contacts']")));
 		Actions actions = new Actions(driver);	
 		actions.moveToElement(contactsLable).build().perform();
